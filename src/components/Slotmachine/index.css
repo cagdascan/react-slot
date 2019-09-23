@@ -1,0 +1,46 @@
+.container {
+  border: 24px solid orange;
+  padding: 12px;
+  border-radius: 24px;
+  background: #000;
+}
+
+.wheel-container {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+}
+
+.buttons button {
+  flex: 1;
+  color: #fff;
+  width: 100px;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+button.stop {
+  background-color: #f93030;
+}
+
+button.start {
+  background-color: green;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.score {
+  margin: 12px;
+  background: white;
+  font-size: 24px;
+  padding: 12px;
+  text-align: right;
+}

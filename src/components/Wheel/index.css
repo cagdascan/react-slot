@@ -1,0 +1,8 @@
+.wheel {
+  display: flex;
+  flex-direction: column;
+  font-size: 72px;
+  padding: 48px;
+  background-color: #fff;
+  margin: 12px;
+}
