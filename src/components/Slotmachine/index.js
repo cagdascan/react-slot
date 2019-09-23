@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Score from "../Score";
 import Wheel from "../Wheel";
 import "./index.css";
 
 export default function Slotmachine() {
-  const [machineState, setMachineState] = useState({
+  const [machineState, setMachineState] = React.useState({
     running: false,
     started: false
   });
 
-  const [state, setState] = useState({
+  const [state, setState] = React.useState({
     wheel1: Math.floor(Math.random() * 4),
     wheel2: Math.floor(Math.random() * 4),
     wheel3: Math.floor(Math.random() * 4)
@@ -49,7 +49,7 @@ export default function Slotmachine() {
   const stop = () => {
     clearInterval(interval.current);
     clearTimeout(timeout.current);
-    setMachineState(s => ({ ...s, running: false }));
+    setMachineState({ running: false, started: true });
   };
 
   const start = () => {
@@ -69,6 +69,7 @@ export default function Slotmachine() {
             onClick={stop}
             disabled={!machineState.running}
             className="stop"
+            id="stop-btn"
           >
             STOP
           </button>

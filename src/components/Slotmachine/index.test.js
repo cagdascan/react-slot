@@ -19,11 +19,19 @@ describe("<Slotmachine />", () => {
     jest.clearAllMocks();
   });
 
-  it("calls setCount with count + 1", () => {
+  it("calls setMachineState with running true", () => {
     wrapper
       .find("#start-btn")
       .props()
       .onClick();
-    expect(setState).toHaveBeenCalled();
+    expect(setState).toHaveBeenCalledWith({ running: true, started: true });
+  });
+
+  it("calls setMachineState with running false", () => {
+    wrapper
+      .find("#stop-btn")
+      .props()
+      .onClick();
+    expect(setState).toHaveBeenCalledWith({ running: false, started: true });
   });
 });
